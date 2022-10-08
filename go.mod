@@ -7,11 +7,11 @@ require (
 	github.com/btcsuite/btcd/btcutil/psbt v1.1.5
 	github.com/btcsuite/btcd/chaincfg/chainhash v1.0.1
 	github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f
-	github.com/btcsuite/btcwallet v0.15.2-0.20220804001213-5aafe4789850
 	github.com/btcsuite/btcwallet/wtxmgr v1.5.0
 	github.com/lightningnetwork/lnd v0.15.1-beta
 	github.com/lightningnetwork/lnd/kvdb v1.3.1
 	github.com/stretchr/testify v1.7.1
+	go.etcd.io/bbolt v1.3.6
 	google.golang.org/grpc v1.38.0
 	gopkg.in/macaroon-bakery.v2 v2.0.1
 	gopkg.in/macaroon.v2 v2.1.0
@@ -22,6 +22,7 @@ require (
 	github.com/aead/siphash v1.0.1 // indirect
 	github.com/andybalholm/brotli v1.0.3 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
+	github.com/btcsuite/btcwallet v0.15.2-0.20220804001213-5aafe4789850 // indirect
 	github.com/btcsuite/btcwallet/wallet/txauthor v1.2.3 // indirect
 	github.com/btcsuite/btcwallet/wallet/txrules v1.2.0 // indirect
 	github.com/btcsuite/btcwallet/wallet/txsizes v1.1.0 // indirect
@@ -109,7 +110,6 @@ require (
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/xi2/xz v0.0.0-20171230120015-48954b6210f8 // indirect
 	github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2 // indirect
-	go.etcd.io/bbolt v1.3.6 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/v2 v2.305.0 // indirect

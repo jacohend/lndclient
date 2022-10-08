@@ -167,6 +167,7 @@ type LndServices struct {
 	Router        RouterClient
 	Versioner     VersionerClient
 	State         StateClient
+	Neutrino      NeutrinoClient
 
 	ChainParams *chaincfg.Params
 	NodeAlias   string
@@ -351,6 +352,9 @@ func NewLndServices(cfg *LndServicesConfig) (*GrpcLndServices, error) {
 	routerClient := newRouterClient(
 		conn, macaroons[routerMacFilename], timeout,
 	)
+	neutrinoClient := *newNeutrinoClient(
+		conn, macaroons[neutrinoMacFilename], timeout,
+	)
 
 	cleanup := func() {
 		log.Debugf("Closing lnd connection")
@@ -380,6 +384,7 @@ func NewLndServices(cfg *LndServicesConfig) (*GrpcLndServices, error) {
 			Invoices:      invoicesClient,
 			Router:        routerClient,
 			Versioner:     versionerClient,
+			Neutrino:      neutrinoClient,
 			ChainParams:   chainParams,
 			NodeAlias:     nodeAlias,
 			NodePubkey:    route.Vertex(nodeKey),
@@ -766,6 +771,7 @@ var (
 	walletKitMacFilename = "walletkit.macaroon"
 	routerMacFilename    = "router.macaroon"
 	signerMacFilename    = "signer.macaroon"
+	neutrinoMacFilename  = "neutrino.macaroon"
 	readonlyMacFilename  = "readonly.macaroon"
 
 	// maxMsgRecvSize is the largest gRPC message our client will receive.
