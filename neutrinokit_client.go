@@ -38,33 +38,24 @@ type NeutrinoKitClient interface {
 	GetBlockHash(ctx context.Context, in *neutrinorpc.GetBlockHashRequest, opts ...grpc.CallOption) (*neutrinorpc.GetBlockHashResponse, error)
 }
 
-type NeutrinoClient struct {
+type neutrinoKitClient struct {
 	client      NeutrinoKitClient
 	readonlyMac serializedMacaroon
 	timeout     time.Duration
 }
 
 func newNeutrinoClient(conn grpc.ClientConnInterface,
-	readonlyMac serializedMacaroon, timeout time.Duration) *NeutrinoClient {
+	readonlyMac serializedMacaroon, timeout time.Duration) *neutrinoKitClient {
 
-	return &NeutrinoClient{
+	return &neutrinoKitClient{
 		client:      neutrinorpc.NewNeutrinoKitClient(conn),
 		readonlyMac: readonlyMac,
 		timeout:     timeout,
 	}
 }
 
-type neutrinoKitClient struct {
-	cc grpc.ClientConnInterface
-}
-
-func NewNeutrinoKitClient(cc grpc.ClientConnInterface) NeutrinoKitClient {
-	return &neutrinoKitClient{cc}
-}
-
 func (c *neutrinoKitClient) Status(ctx context.Context, in *neutrinorpc.StatusRequest, opts ...grpc.CallOption) (*neutrinorpc.StatusResponse, error) {
-	out := new(neutrinorpc.StatusResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/Status", in, out, opts...)
+	out, err := c.client.Status(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,8 +63,7 @@ func (c *neutrinoKitClient) Status(ctx context.Context, in *neutrinorpc.StatusRe
 }
 
 func (c *neutrinoKitClient) AddPeer(ctx context.Context, in *neutrinorpc.AddPeerRequest, opts ...grpc.CallOption) (*neutrinorpc.AddPeerResponse, error) {
-	out := new(neutrinorpc.AddPeerResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/AddPeer", in, out, opts...)
+	out, err := c.client.AddPeer(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,8 +71,7 @@ func (c *neutrinoKitClient) AddPeer(ctx context.Context, in *neutrinorpc.AddPeer
 }
 
 func (c *neutrinoKitClient) DisconnectPeer(ctx context.Context, in *neutrinorpc.DisconnectPeerRequest, opts ...grpc.CallOption) (*neutrinorpc.DisconnectPeerResponse, error) {
-	out := new(neutrinorpc.DisconnectPeerResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/DisconnectPeer", in, out, opts...)
+	out, err := c.client.DisconnectPeer(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -90,8 +79,7 @@ func (c *neutrinoKitClient) DisconnectPeer(ctx context.Context, in *neutrinorpc.
 }
 
 func (c *neutrinoKitClient) IsBanned(ctx context.Context, in *neutrinorpc.IsBannedRequest, opts ...grpc.CallOption) (*neutrinorpc.IsBannedResponse, error) {
-	out := new(neutrinorpc.IsBannedResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/IsBanned", in, out, opts...)
+	out, err := c.client.IsBanned(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -99,8 +87,7 @@ func (c *neutrinoKitClient) IsBanned(ctx context.Context, in *neutrinorpc.IsBann
 }
 
 func (c *neutrinoKitClient) GetBlockHeader(ctx context.Context, in *neutrinorpc.GetBlockHeaderRequest, opts ...grpc.CallOption) (*neutrinorpc.GetBlockHeaderResponse, error) {
-	out := new(neutrinorpc.GetBlockHeaderResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/GetBlockHeader", in, out, opts...)
+	out, err := c.client.GetBlockHeader(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -108,8 +95,7 @@ func (c *neutrinoKitClient) GetBlockHeader(ctx context.Context, in *neutrinorpc.
 }
 
 func (c *neutrinoKitClient) GetBlock(ctx context.Context, in *neutrinorpc.GetBlockRequest, opts ...grpc.CallOption) (*neutrinorpc.GetBlockResponse, error) {
-	out := new(neutrinorpc.GetBlockResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/GetBlock", in, out, opts...)
+	out, err := c.client.GetBlock(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -117,8 +103,7 @@ func (c *neutrinoKitClient) GetBlock(ctx context.Context, in *neutrinorpc.GetBlo
 }
 
 func (c *neutrinoKitClient) GetCFilter(ctx context.Context, in *neutrinorpc.GetCFilterRequest, opts ...grpc.CallOption) (*neutrinorpc.GetCFilterResponse, error) {
-	out := new(neutrinorpc.GetCFilterResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/GetCFilter", in, out, opts...)
+	out, err := c.client.GetCFilter(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -126,8 +111,7 @@ func (c *neutrinoKitClient) GetCFilter(ctx context.Context, in *neutrinorpc.GetC
 }
 
 func (c *neutrinoKitClient) GetBlockHash(ctx context.Context, in *neutrinorpc.GetBlockHashRequest, opts ...grpc.CallOption) (*neutrinorpc.GetBlockHashResponse, error) {
-	out := new(neutrinorpc.GetBlockHashResponse)
-	err := c.cc.Invoke(ctx, "/neutrinorpc.NeutrinoKit/GetBlockHash", in, out, opts...)
+	out, err := c.client.GetBlockHash(ctx, in, opts...)
 	if err != nil {
 		return nil, err
 	}

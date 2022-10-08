@@ -167,7 +167,7 @@ type LndServices struct {
 	Router        RouterClient
 	Versioner     VersionerClient
 	State         StateClient
-	Neutrino      NeutrinoClient
+	Neutrino      NeutrinoKitClient
 
 	ChainParams *chaincfg.Params
 	NodeAlias   string
@@ -352,7 +352,7 @@ func NewLndServices(cfg *LndServicesConfig) (*GrpcLndServices, error) {
 	routerClient := newRouterClient(
 		conn, macaroons[routerMacFilename], timeout,
 	)
-	neutrinoClient := *newNeutrinoClient(
+	neutrinoKitClient := newNeutrinoClient(
 		conn, macaroons[neutrinoMacFilename], timeout,
 	)
 
@@ -384,7 +384,7 @@ func NewLndServices(cfg *LndServicesConfig) (*GrpcLndServices, error) {
 			Invoices:      invoicesClient,
 			Router:        routerClient,
 			Versioner:     versionerClient,
-			Neutrino:      neutrinoClient,
+			Neutrino:      neutrinoKitClient,
 			ChainParams:   chainParams,
 			NodeAlias:     nodeAlias,
 			NodePubkey:    route.Vertex(nodeKey),
