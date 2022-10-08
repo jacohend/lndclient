@@ -96,6 +96,7 @@ github.com/btcsuite/btcd/chaincfg/chainhash v1.0.1/go.mod h1:7SFka0XMvUgj3hfZtyd
 github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f h1:bAs4lUbRJpnnkd9VhRV3jjAVU7DJVjMaK+IsvSeZvFo=
 github.com/btcsuite/btclog v0.0.0-20170628155309-84c8d2346e9f/go.mod h1:TdznJufoqS23FtqVCzL0ZqgP5MqXbb4fg/WgDys70nA=
 github.com/btcsuite/btcutil v0.0.0-20190425235716-9e5f4b9a998d/go.mod h1:+5NJ2+qvTyV9exUAL/rxXi3DcLg2Ts+ymUAY5y4NvMg=
+github.com/btcsuite/btcwallet v0.15.1/go.mod h1:7OFsQ8ypiRwmr67hE0z98uXgJgXGAihE79jCib9x6ag=
 github.com/btcsuite/btcwallet v0.15.2-0.20220804001213-5aafe4789850 h1:yhtY53u3I6qT0yMJg35Yfa+yCVhvoqWWKTB2D2GBNJE=
 github.com/btcsuite/btcwallet v0.15.2-0.20220804001213-5aafe4789850/go.mod h1:7OFsQ8ypiRwmr67hE0z98uXgJgXGAihE79jCib9x6ag=
 github.com/btcsuite/btcwallet/wallet/txauthor v1.2.3 h1:M2yr5UlULvpqtxUqpMxTME/pA92Z9cpqeyvAFk9lAg0=
@@ -499,8 +500,8 @@ github.com/lightninglabs/neutrino v0.14.2/go.mod h1:OICUeTCn+4Tu27YRJIpWvvqySxx4
 github.com/lightninglabs/protobuf-hex-display v1.4.3-hex-display/go.mod h1:2oKOBU042GKFHrdbgGiKax4xVrFiZu51lhacUZQ9MnE=
 github.com/lightningnetwork/lightning-onion v1.0.2-0.20220211021909-bb84a1ccb0c5 h1:TkKwqFcQTGYoI+VEqyxA8rxpCin8qDaYX0AfVRinT3k=
 github.com/lightningnetwork/lightning-onion v1.0.2-0.20220211021909-bb84a1ccb0c5/go.mod h1:7dDx73ApjEZA0kcknI799m2O5kkpfg4/gr7N092ojNo=
-github.com/lightningnetwork/lnd v0.15.0-beta.rc6.0.20220825081330-cf9a9864cf25 h1:2nMMQRjS8Oi/0VbJL3Vn8aDeQC5WLDbfZYzsMxIWNcY=
-github.com/lightningnetwork/lnd v0.15.0-beta.rc6.0.20220825081330-cf9a9864cf25/go.mod h1:3C62CV5fL8F6DK8VHZJJSgNGFzXxb3OPcyCz+McrjSU=
+github.com/lightningnetwork/lnd v0.15.1-beta h1:XR6L/TM3IzWqziS8DgsXLlDsu2/4EMK4WzvZpyYhrdM=
+github.com/lightningnetwork/lnd v0.15.1-beta/go.mod h1:21UpSyTj8n94nsaJ0OFRXk4yOEkE7xA9JEX5QS4oMy4=
 github.com/lightningnetwork/lnd/cert v1.1.1/go.mod h1:1P46svkkd73oSoeI4zjkVKgZNwGq8bkGuPR8z+5vQUs=
 github.com/lightningnetwork/lnd/clock v1.0.1/go.mod h1:KnQudQ6w0IAMZi1SgvecLZQZ43ra2vpDNj7H/aasemg=
 github.com/lightningnetwork/lnd/clock v1.1.0 h1:/yfVAwtPmdx45aQBoXQImeY7sOIEr7IXlImRMBOZ7GQ=
@@ -520,6 +521,7 @@ github.com/lightningnetwork/lnd/tlv v1.0.2/go.mod h1:fICAfsqk1IOsC1J7G9IdsWX1EqW
 github.com/lightningnetwork/lnd/tlv v1.0.3 h1:0xBZcPuXagP6f7TY/RnLNR4igE21ov6qUdTr5NyvhhI=
 github.com/lightningnetwork/lnd/tlv v1.0.3/go.mod h1:dzR/aZetBri+ZY/fHbwV06fNn/3UID6htQzbHfREFdo=
 github.com/lightningnetwork/lnd/tor v1.0.0/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
+github.com/lightningnetwork/lnd/tor v1.0.1/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
 github.com/lightningnetwork/lnd/tor v1.0.2 h1:GlumRkKdzXCX0AIvIi2UXKpeY1Q4RT7Lz/CfGpKSLrU=
 github.com/lightningnetwork/lnd/tor v1.0.2/go.mod h1:RDtaAdwfAm+ONuPYwUhNIH1RAvKPv+75lHPOegUcz64=
 github.com/ltcsuite/ltcd v0.0.0-20190101042124-f37f8bf35796 h1:sjOGyegMIhvgfq5oaue6Td+hxZuf3tDC8lAPrFldqFw=
